@@ -3,7 +3,8 @@ Write your reflection here.
 
 
 This assignment helped me better understand how Python packages and modules can be used 
-to organize code. I also learned how an etl pipeline splits up extracting, transforming
-and reporting data. I struggled the most understanding how the different files could be
-connected through imports and the public api. Going forward I could use more practice organizing
-packages.
+to organize code and how an etl pipeline splits up extracting, transforming
+and reporting data. I also learned how a public API allows specific functions to be 
+easily accessible. I struggled the most understanding how the different files could be
+connected through imports and the public api. Going forward I want to practice creating and
+organizing packages using imports to connect its modules without relying on its written code.
