@@ -1,7 +1,3 @@
-Write your reflection here.
-
-
-
 This assignment helped me better understand how Python packages and modules can be used 
 to organize code and how an etl pipeline splits up extracting, transforming
 and reporting data. I also learned how a public API allows specific functions to be 
