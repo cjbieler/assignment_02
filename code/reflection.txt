@@ -1,9 +1,6 @@
 Write your reflection here.
 
-See reflection.md for what makes a good reflection — be specific, use the
-terminology from this assignment (package, module, ETL, coercion, public API,
-relative import, accumulator, group by, unit vs. integration test), and make it
-actionable.
+
 
 This assignment helped me better understand how Python packages and modules can be used 
 to organize code. I also learned how an etl pipeline splits up extracting, transforming
