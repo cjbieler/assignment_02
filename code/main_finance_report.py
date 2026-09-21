@@ -79,4 +79,4 @@ print()
 #
 #          That line is given because the format spec is worth seeing once. You
 #          will need the same trick in the next two reports.
-# print(f"Total Pipeline Revenue: ${total_revenue:,.2f}")
+print(f"Total Pipeline Revenue: ${total_revenue:,.2f}")

@@ -22,6 +22,17 @@ Before running:  pip install -r requirements.txt
     python code/main_daily_report.py 42     # the generated data for seed 42
 """
 
+import sys
+
+from sales_pipeline import (
+    calculate_total_revenue,
+    clean_sales_data,
+    find_top_entry,
+    get_raw_sales_data,
+    print_day_table,
+    summarize_by_day,
+)
+
 # --- The report ------------------------------------------------------------------
 #
 # No scaffolding. You have written two of these now, and this one asks the same
@@ -39,3 +50,32 @@ Before running:  pip install -r requirements.txt
 # The rules have not changed: no arithmetic and no formatting logic in a report. If
 # you need a calculation this file cannot get by calling the package, the
 # calculation belongs in sales_pipeline/transform.py.
+
+seed = None
+if len(sys.argv) > 1 and sys.argv[1].strip() != "":
+    seed = int(sys.argv[1])
+
+# 1. Extract
+raw_data = get_raw_sales_data(seed)
+
+# 2. Transform
+clean_data = clean_sales_data(raw_data)
+day_summary = summarize_by_day(clean_data)
+total_revenue = calculate_total_revenue(clean_data)
+busiest_day_by_revenue = find_top_entry(day_summary, "revenue")
+busiest_day_by_units = find_top_entry(day_summary, "units_sold")
+
+# 3. Load
+print("=== OPERATIONS: Sales by Day ===")
+print()
+print_day_table(day_summary)
+print()
+print(f"Total Revenue:          ${total_revenue:,.2f}")
+print(
+    f"Busiest day by revenue: {busiest_day_by_revenue['date']} "
+    f"(${busiest_day_by_revenue['revenue']:,.2f})"
+)
+print(
+    f"Busiest day by units:   {busiest_day_by_units['date']} "
+    f"({busiest_day_by_units['units_sold']} units)"
+)

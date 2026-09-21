@@ -351,7 +351,6 @@ def test_calculate_total_revenue_on_generated_data():
             SEEDED[seed]["revenue"]
         ), f"wrong total revenue for seed {seed}"
 
-
 def test_summarize_by_item():
     """Scoped: the group-by on its own, given rows that are already clean.
 
